@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="My portfolio home page">
+    <link href="assets/favicon.png" type="image/x-icon" rel="icon">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/craft-ui.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+</head>
+<body>
+<noscript>Your browser does not support JavaScript!</noscript>
+<header>
+    <div style="display: flex">
+        <div>Logo</div>
+        <div>Text Logo</div>
+        <div style="flex: 1"><i class="fa fa-search"></i>Search</div>
+        <div>Small menu</div>
+        <div>Language dropdown</div>
+    </div>
+    <nav></nav>
+</header>
+<main>
+    <div class="row">
+        <div class="col-0-24 col-512-12 col-1024-6 " style="border: 1px solid red">abcd</div>
+        <div class="col-0-24 col-512-12 col-1024-6 d-1280-none" style="border: 1px solid red">abcd display: none</div>
+        <div class="col-0-24 col-512-12 col-1024-6" style="border: 1px solid red">abcd</div>
+        <div class="col-0-24 col-512-12 col-1024-6" style="border: 1px solid red">abcd</div>
+    </div>
+    <aside></aside>
+    <section>
+        <article></article>
+    </section>
+</main>
+
+<footer>
+    Footer
+    <div>©2016-2025 All Right Reserved</div>
+</footer>
+<script>
+    function f() {
+        let ww = [128, 192, 256, 384, 512, 640, 768, 896, 1024, 1152, 1280, 1408, 1536, 1664, 1792, 1920, 2048];
+        let str = '';
+        for(let i = 24; i > 0; i--){
+            str += '.col-0-' + i + ' {';
+            str += 'width: ' + (100 * i / 24).toFixed(5) + '%;}';
+        }
+        ww.forEach((w) => {
+            str += '@media (min-width: ' + w + 'px){';
+            str += '.d-' + w + '-none{display: none;}';
+            str += '.d-' + w + '-flex{display: flex;}';
+            str += '.d-' + w + '-inline-flex{display: inline-flex;}';
+            str += '.d-' + w + '-block{display: block;}';
+            str += '.d-' + w + '-inline-block{display: inline-block;}';
+            str += '.d-' + w + '-grid{display: grid;}';
+            str += '.d-' + w + '-inline-grid{display: inline-grid;}';
+            for(let i = 24; i > 0; i--){
+                str += '.col-' + w + '-' + i + ' {';
+                str += 'width: ' + (100 * i / 24).toFixed(5) + '%;}';
+            }
+            str += '}';
+        });
+        str = str.replace(/6667/ig, '6666');
+        console.log(str);
+    }
+
+
+</script>
+</body>
+</html>
