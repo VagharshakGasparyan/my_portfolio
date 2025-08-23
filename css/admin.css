@@ -68,6 +68,7 @@ aside:hover{
 
 main{
     /*border: 3px solid grey;*/
+    position: relative;
     grid-area: content;
     overflow: auto;
     padding: 10px;
