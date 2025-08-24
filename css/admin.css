@@ -217,3 +217,126 @@ footer{
 .round-button:active{
     background-color: var(--c-2);
 }
+.sidebar-item{
+    padding: 5px 0;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.sidebar-item-active{
+    background-color: var(--c-2);
+}
+
+.sidebar-item > i.fa{
+    margin-right: 10px;
+}
+.sidebar-item:hover{
+    background-image: radial-gradient(var(--c-2) 100%, var(--c-5) 200%, var(--c) 300%);
+    animation: sidebar-item-anim 1s linear 1;
+}
+.sidebar-item:active{
+    background-color: var(--c-5);
+}
+@keyframes sidebar-item-anim {
+    0% {background-image: radial-gradient(var(--c-2) 0%, var(--c-5) 0%, var(--c) 0%);}
+    1% {background-image: radial-gradient(var(--c-2) 1%, var(--c-5) 2%, var(--c) 3%);}
+    2% {background-image: radial-gradient(var(--c-2) 2%, var(--c-5) 4%, var(--c) 6%);}
+    3% {background-image: radial-gradient(var(--c-2) 3%, var(--c-5) 6%, var(--c) 9%);}
+    4% {background-image: radial-gradient(var(--c-2) 4%, var(--c-5) 8%, var(--c) 12%);}
+    5% {background-image: radial-gradient(var(--c-2) 5%, var(--c-5) 10%, var(--c) 15%);}
+    6% {background-image: radial-gradient(var(--c-2) 6%, var(--c-5) 12%, var(--c) 18%);}
+    7% {background-image: radial-gradient(var(--c-2) 7%, var(--c-5) 14%, var(--c) 21%);}
+    8% {background-image: radial-gradient(var(--c-2) 8%, var(--c-5) 16%, var(--c) 24%);}
+    9% {background-image: radial-gradient(var(--c-2) 9%, var(--c-5) 18%, var(--c) 27%);}
+    10% {background-image: radial-gradient(var(--c-2) 10%, var(--c-5) 20%, var(--c) 30%);}
+    11% {background-image: radial-gradient(var(--c-2) 11%, var(--c-5) 22%, var(--c) 33%);}
+    12% {background-image: radial-gradient(var(--c-2) 12%, var(--c-5) 24%, var(--c) 36%);}
+    13% {background-image: radial-gradient(var(--c-2) 13%, var(--c-5) 26%, var(--c) 39%);}
+    14% {background-image: radial-gradient(var(--c-2) 14%, var(--c-5) 28%, var(--c) 42%);}
+    15% {background-image: radial-gradient(var(--c-2) 15%, var(--c-5) 30%, var(--c) 45%);}
+    16% {background-image: radial-gradient(var(--c-2) 16%, var(--c-5) 32%, var(--c) 48%);}
+    17% {background-image: radial-gradient(var(--c-2) 17%, var(--c-5) 34%, var(--c) 51%);}
+    18% {background-image: radial-gradient(var(--c-2) 18%, var(--c-5) 36%, var(--c) 54%);}
+    19% {background-image: radial-gradient(var(--c-2) 19%, var(--c-5) 38%, var(--c) 57%);}
+    20% {background-image: radial-gradient(var(--c-2) 20%, var(--c-5) 40%, var(--c) 60%);}
+    21% {background-image: radial-gradient(var(--c-2) 21%, var(--c-5) 42%, var(--c) 63%);}
+    22% {background-image: radial-gradient(var(--c-2) 22%, var(--c-5) 44%, var(--c) 66%);}
+    23% {background-image: radial-gradient(var(--c-2) 23%, var(--c-5) 46%, var(--c) 69%);}
+    24% {background-image: radial-gradient(var(--c-2) 24%, var(--c-5) 48%, var(--c) 72%);}
+    25% {background-image: radial-gradient(var(--c-2) 25%, var(--c-5) 50%, var(--c) 75%);}
+    26% {background-image: radial-gradient(var(--c-2) 26%, var(--c-5) 52%, var(--c) 78%);}
+    27% {background-image: radial-gradient(var(--c-2) 27%, var(--c-5) 54%, var(--c) 81%);}
+    28% {background-image: radial-gradient(var(--c-2) 28%, var(--c-5) 56%, var(--c) 84%);}
+    29% {background-image: radial-gradient(var(--c-2) 29%, var(--c-5) 58%, var(--c) 87%);}
+    30% {background-image: radial-gradient(var(--c-2) 30%, var(--c-5) 60%, var(--c) 90%);}
+    31% {background-image: radial-gradient(var(--c-2) 31%, var(--c-5) 62%, var(--c) 93%);}
+    32% {background-image: radial-gradient(var(--c-2) 32%, var(--c-5) 64%, var(--c) 96%);}
+    33% {background-image: radial-gradient(var(--c-2) 33%, var(--c-5) 66%, var(--c) 99%);}
+    34% {background-image: radial-gradient(var(--c-2) 34%, var(--c-5) 68%, var(--c) 102%);}
+    35% {background-image: radial-gradient(var(--c-2) 35%, var(--c-5) 70%, var(--c) 105%);}
+    36% {background-image: radial-gradient(var(--c-2) 36%, var(--c-5) 72%, var(--c) 108%);}
+    37% {background-image: radial-gradient(var(--c-2) 37%, var(--c-5) 74%, var(--c) 111%);}
+    38% {background-image: radial-gradient(var(--c-2) 38%, var(--c-5) 76%, var(--c) 114%);}
+    39% {background-image: radial-gradient(var(--c-2) 39%, var(--c-5) 78%, var(--c) 117%);}
+    40% {background-image: radial-gradient(var(--c-2) 40%, var(--c-5) 80%, var(--c) 120%);}
+    41% {background-image: radial-gradient(var(--c-2) 41%, var(--c-5) 82%, var(--c) 123%);}
+    42% {background-image: radial-gradient(var(--c-2) 42%, var(--c-5) 84%, var(--c) 126%);}
+    43% {background-image: radial-gradient(var(--c-2) 43%, var(--c-5) 86%, var(--c) 129%);}
+    44% {background-image: radial-gradient(var(--c-2) 44%, var(--c-5) 88%, var(--c) 132%);}
+    45% {background-image: radial-gradient(var(--c-2) 45%, var(--c-5) 90%, var(--c) 135%);}
+    46% {background-image: radial-gradient(var(--c-2) 46%, var(--c-5) 92%, var(--c) 138%);}
+    47% {background-image: radial-gradient(var(--c-2) 47%, var(--c-5) 94%, var(--c) 141%);}
+    48% {background-image: radial-gradient(var(--c-2) 48%, var(--c-5) 96%, var(--c) 144%);}
+    49% {background-image: radial-gradient(var(--c-2) 49%, var(--c-5) 98%, var(--c) 147%);}
+    50% {background-image: radial-gradient(var(--c-2) 50%, var(--c-5) 100%, var(--c) 150%);}
+    51% {background-image: radial-gradient(var(--c-2) 51%, var(--c-5) 102%, var(--c) 153%);}
+    52% {background-image: radial-gradient(var(--c-2) 52%, var(--c-5) 104%, var(--c) 156%);}
+    53% {background-image: radial-gradient(var(--c-2) 53%, var(--c-5) 106%, var(--c) 159%);}
+    54% {background-image: radial-gradient(var(--c-2) 54%, var(--c-5) 108%, var(--c) 162%);}
+    55% {background-image: radial-gradient(var(--c-2) 55%, var(--c-5) 110%, var(--c) 165%);}
+    56% {background-image: radial-gradient(var(--c-2) 56%, var(--c-5) 112%, var(--c) 168%);}
+    57% {background-image: radial-gradient(var(--c-2) 57%, var(--c-5) 114%, var(--c) 171%);}
+    58% {background-image: radial-gradient(var(--c-2) 58%, var(--c-5) 116%, var(--c) 174%);}
+    59% {background-image: radial-gradient(var(--c-2) 59%, var(--c-5) 118%, var(--c) 177%);}
+    60% {background-image: radial-gradient(var(--c-2) 60%, var(--c-5) 120%, var(--c) 180%);}
+    61% {background-image: radial-gradient(var(--c-2) 61%, var(--c-5) 122%, var(--c) 183%);}
+    62% {background-image: radial-gradient(var(--c-2) 62%, var(--c-5) 124%, var(--c) 186%);}
+    63% {background-image: radial-gradient(var(--c-2) 63%, var(--c-5) 126%, var(--c) 189%);}
+    64% {background-image: radial-gradient(var(--c-2) 64%, var(--c-5) 128%, var(--c) 192%);}
+    65% {background-image: radial-gradient(var(--c-2) 65%, var(--c-5) 130%, var(--c) 195%);}
+    66% {background-image: radial-gradient(var(--c-2) 66%, var(--c-5) 132%, var(--c) 198%);}
+    67% {background-image: radial-gradient(var(--c-2) 67%, var(--c-5) 134%, var(--c) 201%);}
+    68% {background-image: radial-gradient(var(--c-2) 68%, var(--c-5) 136%, var(--c) 204%);}
+    69% {background-image: radial-gradient(var(--c-2) 69%, var(--c-5) 138%, var(--c) 207%);}
+    70% {background-image: radial-gradient(var(--c-2) 70%, var(--c-5) 140%, var(--c) 210%);}
+    71% {background-image: radial-gradient(var(--c-2) 71%, var(--c-5) 142%, var(--c) 213%);}
+    72% {background-image: radial-gradient(var(--c-2) 72%, var(--c-5) 144%, var(--c) 216%);}
+    73% {background-image: radial-gradient(var(--c-2) 73%, var(--c-5) 146%, var(--c) 219%);}
+    74% {background-image: radial-gradient(var(--c-2) 74%, var(--c-5) 148%, var(--c) 222%);}
+    75% {background-image: radial-gradient(var(--c-2) 75%, var(--c-5) 150%, var(--c) 225%);}
+    76% {background-image: radial-gradient(var(--c-2) 76%, var(--c-5) 152%, var(--c) 228%);}
+    77% {background-image: radial-gradient(var(--c-2) 77%, var(--c-5) 154%, var(--c) 231%);}
+    78% {background-image: radial-gradient(var(--c-2) 78%, var(--c-5) 156%, var(--c) 234%);}
+    79% {background-image: radial-gradient(var(--c-2) 79%, var(--c-5) 158%, var(--c) 237%);}
+    80% {background-image: radial-gradient(var(--c-2) 80%, var(--c-5) 160%, var(--c) 240%);}
+    81% {background-image: radial-gradient(var(--c-2) 81%, var(--c-5) 162%, var(--c) 243%);}
+    82% {background-image: radial-gradient(var(--c-2) 82%, var(--c-5) 164%, var(--c) 246%);}
+    83% {background-image: radial-gradient(var(--c-2) 83%, var(--c-5) 166%, var(--c) 249%);}
+    84% {background-image: radial-gradient(var(--c-2) 84%, var(--c-5) 168%, var(--c) 252%);}
+    85% {background-image: radial-gradient(var(--c-2) 85%, var(--c-5) 170%, var(--c) 255%);}
+    86% {background-image: radial-gradient(var(--c-2) 86%, var(--c-5) 172%, var(--c) 258%);}
+    87% {background-image: radial-gradient(var(--c-2) 87%, var(--c-5) 174%, var(--c) 261%);}
+    88% {background-image: radial-gradient(var(--c-2) 88%, var(--c-5) 176%, var(--c) 264%);}
+    89% {background-image: radial-gradient(var(--c-2) 89%, var(--c-5) 178%, var(--c) 267%);}
+    90% {background-image: radial-gradient(var(--c-2) 90%, var(--c-5) 180%, var(--c) 270%);}
+    91% {background-image: radial-gradient(var(--c-2) 91%, var(--c-5) 182%, var(--c) 273%);}
+    92% {background-image: radial-gradient(var(--c-2) 92%, var(--c-5) 184%, var(--c) 276%);}
+    93% {background-image: radial-gradient(var(--c-2) 93%, var(--c-5) 186%, var(--c) 279%);}
+    94% {background-image: radial-gradient(var(--c-2) 94%, var(--c-5) 188%, var(--c) 282%);}
+    95% {background-image: radial-gradient(var(--c-2) 95%, var(--c-5) 190%, var(--c) 285%);}
+    96% {background-image: radial-gradient(var(--c-2) 96%, var(--c-5) 192%, var(--c) 288%);}
+    97% {background-image: radial-gradient(var(--c-2) 97%, var(--c-5) 194%, var(--c) 291%);}
+    98% {background-image: radial-gradient(var(--c-2) 98%, var(--c-5) 196%, var(--c) 294%);}
+    99% {background-image: radial-gradient(var(--c-2) 99%, var(--c-5) 198%, var(--c) 297%);}
+    100% {background-image: radial-gradient(var(--c-2) 100%, var(--c-5) 200%, var(--c) 300%);}
+
+}

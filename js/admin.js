@@ -132,3 +132,10 @@ window.addEventListener('load', () => {
         header_search.value = '';
     });
 });
+
+// let str='';
+// for (let i=0;i<=100;i++){
+//     //background-image: radial-gradient(var(--c-2) 5%, var(--c-5) 15%, var(--c) 60%);
+//     str+=i+'% {background-image: radial-gradient(var(--c-2) '+i+'%, var(--c-5) '+(2*i)+'%, var(--c) '+(3*i)+'%);}\n';
+// }
+// console.log(str);
