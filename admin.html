@@ -22,12 +22,19 @@
         <div class="header-menu-text">GV-Code</div>
         <button class="header-menu-button fa fa-2x fa-bars"></button>
     </div>
+    <div style="flex: 1; display: flex; align-items: center;justify-content: center;">
+        <div style="flex: 1"></div>
+        <div class="search-bar">
+            <div class="inp-prev"><i class="fa fa-search"></i></div>
+            <input id="header_search" type="text" class="search-inp" placeholder="Search">
+            <div class="inp-after" id="clear_header_search"><i class="fa fa-close"></i></div>
+        </div>
+        <div style="flex: 1"></div>
 
-    <div style="background-color: var(--bg-light);margin-left: 20px"> Admin Portfolio</div>
-    <div style="flex: 1"><i class="fa fa-search"></i>Search</div>
-    <div>Small menu</div>
-    <div>Language dropdown</div>
-    <nav></nav>
+        <div class="user-name">John Doe</div>
+        <div class="round-button">JD</div>
+    </div>
+
 </header>
 <aside>
     <script>
@@ -51,8 +58,8 @@
 </main>
 
 <footer>
-    Footer
-    <div>©2016-2025 All Right Reserved</div>
+    <div class="text-center" style="font-size: 25px;">Footer</div>
+    <div class="text-center">© 2016 - <script>document.write(new Date().getUTCFullYear().toString())</script> All Right Reserved</div>
 </footer>
 <script src="js/admin.js"></script>
 </body>

@@ -5,6 +5,8 @@ window.addEventListener('load', () => {
         h: 0,//canvas height
         a: 0,//canvas angle
         on: false,
+        x1: 0,//mouse pageX
+        y1: 0 //mouse pageY
     };
     let headerMenuButton = document.querySelector('.header-menu-button');
     let aside = document.querySelector('aside');
@@ -15,11 +17,35 @@ window.addEventListener('load', () => {
     });
     let shadow_text = document.getElementById('shadow_text');
     document.body.addEventListener('mousemove', (ev)=>{
-        // console.log(ev.pageX, ev.pageY);
+        vars.x1 = ev.pageX;
+        vars.y1 = ev.pageY;
+        f2();
+    });
+
+    let main = document.querySelector('main');
+    let zk = document.getElementById('zk');
+    let zk_k = {
+        k: 2.507,
+        start: 248,
+        end: 535
+    };
+    main.addEventListener('scroll', (ev) => {
+        let dx = main.scrollTop;
+        let a = 0;
+        if (dx > zk_k.start && dx < zk_k.end) {
+            a = (dx - zk_k.start) * zk_k.k;
+        }else if(dx >= zk_k.end){
+            a = (zk_k.end - zk_k.start) * zk_k.k;
+        }
+        zk.style.transform = 'rotate(' + a + 'deg)';
+        // console.log(dx, a);
+        f2();
+    });
+    function f2() {
         let x0 = shadow_text.getBoundingClientRect().left + shadow_text.getBoundingClientRect().width / 2;
         let y0 = shadow_text.getBoundingClientRect().top + shadow_text.getBoundingClientRect().height / 2;
-        let x1 = ev.pageX;
-        let y1 = ev.pageY;
+        let x1 = vars.x1;
+        let y1 = vars.y1;
         let dx = x0 - x1;
         let dy = y0 - y1;
         let r = Math.sqrt(dx * dx + dy * dy);
@@ -51,27 +77,7 @@ window.addEventListener('load', () => {
                 vars.on = false;
             }
         }
-
-    });
-
-    let main = document.querySelector('main');
-    let zk = document.getElementById('zk');
-    let zk_k = {
-        k: 2.507,
-        start: 248,
-        end: 535
-    };
-    main.addEventListener('scroll', (ev) => {
-        let dx = main.scrollTop;
-        let a = 0;
-        if (dx > zk_k.start && dx < zk_k.end) {
-            a = (dx - zk_k.start) * zk_k.k;
-        }else if(dx >= zk_k.end){
-            a = (zk_k.end - zk_k.start) * zk_k.k;
-        }
-        zk.style.transform = 'rotate(' + a + 'deg)';
-        // console.log(dx, a);
-    });
+    }
     lightning();
     function lightning() {
         // cnv.width = w;
@@ -79,7 +85,6 @@ window.addEventListener('load', () => {
         const ctx = cnv.getContext('2d');
         // ctx.clearRect(0, 0, cnv.width, cnv.height);
 
-        
         function f1() {
             if(!vars.on){
                 return;
@@ -120,4 +125,10 @@ window.addEventListener('load', () => {
         
 
     }
+    //------------------------------------
+    let clear_header_search = document.getElementById('clear_header_search');
+    let header_search = document.getElementById('header_search');
+    clear_header_search.addEventListener('click', (e) => {
+        header_search.value = '';
+    });
 });
