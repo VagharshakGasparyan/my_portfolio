@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/craft-ui.css">
     <link rel="stylesheet" href="css/admin.css">
+    <script src="js/craft-ui.js"></script>
     <script src="js/index.js"></script>
 </head>
 <body>
@@ -32,33 +33,50 @@
         <div style="flex: 1"></div>
 
         <div class="user-name">John Doe</div>
-        <div class="round-button">JD</div>
+        <div class="drop-container">
+            <div class="round-button drop-head">JD</div>
+            <div class="drop-body">
+                <a class="drop-body-row" href="javascript:void(0)"><i class="fa fa-user-circle mr7"></i>My Account</a>
+                <a class="drop-body-row" href="javascript:void(0)"><i class="fa fa-sign-out mr7"></i>Logout</a>
+            </div>
+        </div>
     </div>
 
 </header>
 <aside>
     <div class="sidebar-item sidebar-item-active"><i class="fa fa-home"></i>Dashboard</div>
     <div class="sidebar-item"><i class="fa fa-user"></i>Users</div>
-    <div class="sidebar-item"><i class="fa fa-user"></i>Analytics</div>
-    <div class="sidebar-item"><i class="fa fa-user"></i>Commerce</div>
-    <div class="sidebar-item"><i class="fa fa-user"></i>Sales</div>
-    <div class="sidebar-item"><i class="fa fa-user"></i>Pages</div>
-    <div class="sidebar-item"><i class="fa fa-user"></i>Applications</div>
-    <div class="sidebar-item"><i class="fa fa-user"></i>Elements</div>
-    <div class="sidebar-item"><i class="fa fa-user"></i>Components</div>
+    <div class="sidebar-item"><i class="fa fa-book"></i>Analytics</div>
+    <div class="sidebar-item"><i class="fa fa-bank"></i>Commerce</div>
+    <div class="sidebar-item"><i class="fa fa-bar-chart"></i>Sales</div>
+    <div class="sidebar-item"><i class="fa fa-pagelines"></i>Pages</div>
+    <div class="sidebar-item"><i class="fa fa-list"></i>Applications</div>
+    <div class="sidebar-item"><i class="fa fa-first-order"></i>Elements</div>
+    <div class="sidebar-item"><i class="fa fa-delicious"></i>Components</div>
+    <div class="sidebar-item"><i class="fa fa-gears"></i>Settings</div>
+    <div class="sidebar-item"><i class="fa fa-photo"></i>Photos</div>
+    <div class="sidebar-item"><i class="fa fa-flag"></i>Translations</div>
     <script>
-        for (let i = 0; i < 100; i++) {
+        for (let i = 1; i <= 50; i++) {
             document.write('<div class="sidebar-item"><i class="fa fa-id-card"></i>Menu Item-' + i + '</div>');
         }
     </script>
 </aside>
 
 <main>
-    <img id="zk" src="assets/images/zk.svg" alt="cogwheel" style="position: sticky; left: 10px; top: 10px;transform-origin: center center;">
-    <div style="font-size: 27px;text-align: center;margin-top: 35px;"><span id="shadow_text">Dashboard</span></div>
-    <img id="zu" src="assets/images/zu.svg" alt="straight_gear" style="position: absolute; left: 5px; top: 300px;">
-
+    <img id="zk" src="assets/images/zk.svg" alt="cogwheel">
+    <div style="font-size: 27px;text-align: center;margin-top: 70px;z-index: 5"><span id="shadow_text">Dashboard</span></div>
+    <img id="zu" src="assets/images/zu.svg" alt="straight_gear">
+    <canvas id="brick_cnv"></canvas>
     <canvas id="lightning_cnv" width="0" height="0" ></canvas>
+    <div class="ml100 mt50 row">
+        <div style="padding: 10px;" class="col-0-24 col-1024-12">
+            <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;"></div>
+        </div>
+        <div style="padding: 10px;" class="col-0-24 col-1024-12">
+            <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;"></div>
+        </div>
+    </div>
     <script>
         for (let i = 0; i < 100; i++) {
             document.write('<div style="padding-left: 100px;">MAIN ITEM-' + i + '</div>');

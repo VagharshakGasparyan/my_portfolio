@@ -6,7 +6,8 @@ window.addEventListener('load', () => {
         a: 0,//canvas angle
         on: false,
         x1: 0,//mouse pageX
-        y1: 0 //mouse pageY
+        y1: 0, //mouse pageY
+        brick_cnv: null,
     };
     let headerMenuButton = document.querySelector('.header-menu-button');
     let aside = document.querySelector('aside');
@@ -14,6 +15,10 @@ window.addEventListener('load', () => {
         // alert('123');
         aside.classList.toggle('aside-to-left');
         document.body.classList.toggle('body-aside-to-left');
+        setTimeout(()=>{
+            vars.brick_cnv.width = vars.brick_cnv.getBoundingClientRect().width;
+            vars.brick_cnv.height = vars.brick_cnv.getBoundingClientRect().height;
+        }, 350);
     });
     let shadow_text = document.getElementById('shadow_text');
     document.body.addEventListener('mousemove', (ev)=>{
@@ -131,11 +136,106 @@ window.addEventListener('load', () => {
     clear_header_search.addEventListener('click', (e) => {
         header_search.value = '';
     });
+
+    //---------------brick----------------------------------------------------------------------------------------------
+    //------------------brick settings--------------------------
+    let brick_width = 40;
+    let brick_height = 20;
+    let lineWidth = 4;
+    let brickColors = ["#071117"];
+    //------------------user settings--------------------------
+    let c = document.getElementById("brick_cnv");
+    if(!c){
+        return 0;
+    }
+    vars.brick_cnv = c;
+    let cxy = {x: 0, y: 0, c: false};
+    c.addEventListener("mousemove", (ev) => {
+        cxy.x = ev.offsetX;
+        cxy.y = ev.offsetY;
+    });
+    c.addEventListener("mousedown", (ev) => {
+        cxy.c = true;
+    });
+    c.addEventListener("mouseup", (ev) => {
+        cxy.c = false;
+    });
+    c.width = c.getBoundingClientRect().width;
+    c.height = c.getBoundingClientRect().height;
+    let ctx = c.getContext('2d');//CanvasRenderingContext2D
+    ctx.lineWidth = lineWidth;
+    let newColor = brickColors[Math.floor(Math.random() * brickColors.length)];
+    ctx.strokeStyle = newColor;
+    ctx.fillStyle = newColor;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    let g = {
+        bricks: [],
+        brickMoment: "x0y0"
+    };
+
+    requestAnimationFrame(draw);
+
+    function draw() {
+        ctx.clearRect(0, 0, c.width, c.height);
+        fFindCenter();
+        requestAnimationFrame(draw);
+    }
+    function fMakeBrickByCenter(brick, i) {
+        let x0 = brick.x, y0 = brick.y, t = brick.t;
+        let m = 128;
+        // let opacity = (Math.floor(15.99999 * Math.max(m - t, 0) / m)).toString(16);
+        let opacity = (Math.floor(255.99999 * Math.max(m - t, 0) / m)).toString(16);
+        opacity = opacity.length < 2 ? '0' + opacity : opacity;
+            // console.log(opacity);
+        // ctx.strokeStyle = brick.c + opacity + opacity;
+        ctx.strokeStyle = brick.c + opacity;
+        // ctx.fillStyle = brick.c + "3";//brick.c + opacity;
+        ctx.beginPath();
+        ctx.moveTo(x0 - 0.5 * brick_width, y0 - 0.5 * brick_height);
+        ctx.lineTo(x0 + 0.5 * brick_width, y0 - 0.5 * brick_height);
+        ctx.lineTo(x0 + 0.5 * brick_width, y0 + 0.5 * brick_height);
+        ctx.lineTo(x0 - 0.5 * brick_width, y0 + 0.5 * brick_height);
+        ctx.closePath();
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();// Draw the Path
+        // ctx.fill();
+        g.bricks[i].t = t + 1;
+        if (t > m){
+            g.bricks.splice(i, 1);
+        }
+    }
+    function fFindCenter() {
+        //brick_width     brick_height
+        let ny = Math.round(cxy.y / brick_height);
+        let y0 = ny * brick_height;
+        let x0 = ny % 2 === 0
+            ? Math.round(cxy.x / brick_width) * brick_width
+            : (Math.round(cxy.x / brick_width - 0.5) + 0.5) * brick_width;
+        let brickMoment = "x" + x0 + "y" + y0;
+        if(brickMoment !== g.brickMoment){
+            g.brickMoment = brickMoment;
+            let newColor = brickColors[Math.floor(Math.random() * brickColors.length)];
+            g.bricks.push({x: x0, y: y0, t: 0, c: newColor});
+        }
+        g.bricks.forEach((brick, i)=>{
+            fMakeBrickByCenter(brick, i);
+        });
+
+    }
+    window.addEventListener('resize', ()=>{
+        vars.brick_cnv.width = vars.brick_cnv.getBoundingClientRect().width;
+        vars.brick_cnv.height = vars.brick_cnv.getBoundingClientRect().height;
+    });
+
 });
 
-// let str='';
-// for (let i=0;i<=100;i++){
-//     //background-image: radial-gradient(var(--c-2) 5%, var(--c-5) 15%, var(--c) 60%);
-//     str+=i+'% {background-image: radial-gradient(var(--c-2) '+i+'%, var(--c-5) '+(2*i)+'%, var(--c) '+(3*i)+'%);}\n';
-// }
-// console.log(str);
+//temp();
+function temp() {
+    let str = '';
+    for (let i = 100; i >= 0; i -= 2) {
+        //background-image: radial-gradient(var(--c-2) 5%, var(--c-5) 15%, var(--c) 60%);
+        str += (100 - i) + '% {background-image: radial-gradient(var(--c-2) ' + i + '%, var(--c-5) ' + (2 * i) + '%, transparent ' + (3 * i) + '%);}\n';
+    }
+    console.log(str);
+}
