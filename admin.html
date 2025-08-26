@@ -65,28 +65,118 @@
 
 <main>
     <img id="zk" src="assets/images/zk.svg" alt="cogwheel">
-    <div style="font-size: 27px;text-align: center;margin-top: 70px;z-index: 5"><span id="shadow_text">Dashboard</span></div>
+    <div style="font-size: 27px;text-align: center;margin-top: 70px;z-index: 5"><span id="shadow_text">Dashboard</span>
+    </div>
     <img id="zu" src="assets/images/zu.svg" alt="straight_gear">
     <canvas id="brick_cnv"></canvas>
-    <canvas id="lightning_cnv" width="0" height="0" ></canvas>
-    <div class="ml100 mt50 row">
+    <canvas id="lightning_cnv" width="0" height="0"></canvas>
+    <div class="ml100 mt100 row">
         <div style="padding: 10px;" class="col-0-24 col-1024-12">
-            <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;"></div>
+            <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;">
+                <h2 class="text-center">Sales for the last month</h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="mw0">N</th>
+                        <th>Store name</th>
+                        <th>$ Sold</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <script>
+                        [{n: "Citadel", s: "12578"}, {n: "Blush Haven", s: "499530"}, {n: "Chic Verve", s: "124568"},
+                            {n: "Femme Loft", s: "225750"}, {n: "Urban Blossom", s: "378564"}, {n: "The Luxe Edit", s: "98450"},
+                            {n: "Bella Aura", s: "75000"}, {n: "Silk & Spice", s: "401250"}, {n: "Glow Theory", s: "257020"},
+                            {n: "Mode Muse", s: "308745"}, {n: "Zenith Finds", s: "45345"}, {n: "Wanderlust Bazaar", s: "784532"},
+                            {n: "The Curiosity Corner", s: "57954"}, {n: "Urban Oasis Goods", s: "72943"}, {n: "Whimsy & Wonder", s: "41865"},
+                            {n: "The Artisan Atelier", s: "49523"}, {n: "Daily Finds Co.", s: "741589"}, {n: "Cornerstone Goods", s: "100"},
+                            {n: "Vista Variety", s: "100000"}, {n: "Harmony Market", s: "150000"}, {n: "Prime Finds Hub", s: "200000"},
+                            {n: "Universal Goods", s: "250000"}, {n: "Horizon Finds", s: "300000"}, {n: "Simply Everything", s: "350145"}, {n: "Bright Picks", s: "400125"},
+                            {n: "Threads & Trends", s: "450745"}, {n: "Style Haven", s: "236557"}, {n: "Haute Threads", s: "124752"}, {n: "Antique Aura", s: "100500"},
+                        ].forEach((item, index) => {
+                            document.write('<tr><td class="mw0">' + (index + 1) + '</td><td>' + item.n + '</td><td>' + item.s + '</td></tr>');
+                        });
+                    </script>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div style="padding: 10px;" class="col-0-24 col-1024-12">
-            <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;"></div>
+            <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;">
+                <h2 class="text-center">Sales for the last year</h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="mw0">N</th>
+                        <th>Store name</th>
+                        <th>$ Sold</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <script>
+                        [{n: "Citadel", s: "12578"}, {n: "Blush Haven", s: "499530"}, {n: "Chic Verve", s: "124568"},
+                            {n: "Femme Loft", s: "225750"}, {n: "Urban Blossom", s: "378564"}, {n: "The Luxe Edit", s: "98450"},
+                            {n: "Bella Aura", s: "75000"}, {n: "Silk & Spice", s: "401250"}, {n: "Glow Theory", s: "257020"},
+                            {n: "Mode Muse", s: "308745"}, {n: "Zenith Finds", s: "45345"}, {n: "Wanderlust Bazaar", s: "784532"},
+                            {n: "The Curiosity Corner", s: "57954"}, {n: "Urban Oasis Goods", s: "72943"}, {n: "Whimsy & Wonder", s: "41865"},
+                            {n: "The Artisan Atelier", s: "49523"}, {n: "Daily Finds Co.", s: "741589"}, {n: "Cornerstone Goods", s: "100"},
+                            {n: "Vista Variety", s: "100000"}, {n: "Harmony Market", s: "150000"}, {n: "Prime Finds Hub", s: "200000"},
+                            {n: "Universal Goods", s: "250000"}, {n: "Horizon Finds", s: "300000"}, {n: "Simply Everything", s: "350145"}, {n: "Bright Picks", s: "400125"},
+                            {n: "Threads & Trends", s: "450745"}, {n: "Style Haven", s: "236557"}, {n: "Haute Threads", s: "124752"}, {n: "Antique Aura", s: "100500"},
+                        ].forEach((item, index) => {
+                            document.write('<tr><td class="mw0">' + (index + 1) + '</td><td>' + item.n + '</td><td>' + (item.s * 12) + '</td></tr>');
+                        });
+                    </script>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="padding: 10px;" class="col-0-24">
+            <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;">
+                <h2 class="text-center">Products</h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="mw0">ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <script>
+                        [{n: "Citadel", s: "12578"}, {n: "Blush Haven", s: "499530"}, {n: "Chic Verve", s: "124568"},
+                            {n: "Femme Loft", s: "225750"}, {n: "Urban Blossom", s: "378564"}, {n: "The Luxe Edit", s: "98450"},
+                            {n: "Bella Aura", s: "75000"}, {n: "Silk & Spice", s: "401250"}, {n: "Glow Theory", s: "257020"},
+                            {n: "Mode Muse", s: "308745"}, {n: "Zenith Finds", s: "45345"}, {n: "Wanderlust Bazaar", s: "784532"},
+                            {n: "The Curiosity Corner", s: "57954"}, {n: "Urban Oasis Goods", s: "72943"}, {n: "Whimsy & Wonder", s: "41865"},
+                            {n: "The Artisan Atelier", s: "49523"}, {n: "Daily Finds Co.", s: "741589"}, {n: "Cornerstone Goods", s: "100"},
+                            {n: "Vista Variety", s: "100000"}, {n: "Harmony Market", s: "150000"}, {n: "Prime Finds Hub", s: "200000"},
+                            {n: "Universal Goods", s: "250000"}, {n: "Horizon Finds", s: "300000"}, {n: "Simply Everything", s: "350145"}, {n: "Bright Picks", s: "400125"},
+                            {n: "Threads & Trends", s: "450745"}, {n: "Style Haven", s: "236557"}, {n: "Haute Threads", s: "124752"}, {n: "Antique Aura", s: "100500"},
+                        ].forEach((item, index) => {
+                            document.write('<tr><td class="mw0">' + (index + 1) + '</td>' +
+                                '<td>' + item.n + '</td><td>' + item.n + '</td>' +
+                                '<td class="mw0">' +
+                                '<button class="button"><i class="fa fa-eye mr5"></i>Show</button>' +
+                                '<button class="button"><i class="fa fa-edit mr5" style="color: var(--c1)"></i>Edit</button>' +
+                                '<button class="button"><i class="fa fa-trash mr5" style="color: #f59"></i>Delete</button></td></tr>');
+                        });
+                    </script>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    <script>
-        for (let i = 0; i < 100; i++) {
-            document.write('<div style="padding-left: 100px;">MAIN ITEM-' + i + '</div>');
-        }
-    </script>
+
 </main>
 
 <footer>
     <div class="text-center" style="font-size: 25px;">Footer</div>
-    <div class="text-center">© 2016 - <script>document.write(new Date().getUTCFullYear().toString())</script> All Right Reserved</div>
+    <div class="text-center">© 2016 -
+        <script>document.write(new Date().getUTCFullYear().toString())</script>
+        All Right Reserved
+    </div>
 </footer>
 <script src="js/admin.js"></script>
 </body>

@@ -190,7 +190,7 @@ window.addEventListener('load', () => {
             // console.log(opacity);
         // ctx.strokeStyle = brick.c + opacity + opacity;
         ctx.strokeStyle = brick.c + opacity;
-        // ctx.fillStyle = brick.c + "3";//brick.c + opacity;
+
         ctx.beginPath();
         ctx.moveTo(x0 - 0.5 * brick_width, y0 - 0.5 * brick_height);
         ctx.lineTo(x0 + 0.5 * brick_width, y0 - 0.5 * brick_height);
@@ -199,6 +199,10 @@ window.addEventListener('load', () => {
         ctx.closePath();
         ctx.lineWidth = lineWidth;
         ctx.stroke();// Draw the Path
+        if(brick.mouse_d){
+            ctx.fillStyle = brick.c + opacity;
+            ctx.fill();
+        }
         // ctx.fill();
         g.bricks[i].t = t + 1;
         if (t > m){
@@ -216,7 +220,7 @@ window.addEventListener('load', () => {
         if(brickMoment !== g.brickMoment){
             g.brickMoment = brickMoment;
             let newColor = brickColors[Math.floor(Math.random() * brickColors.length)];
-            g.bricks.push({x: x0, y: y0, t: 0, c: newColor});
+            g.bricks.push({x: x0, y: y0, t: 0, c: newColor, mouse_d: cxy.c});
         }
         g.bricks.forEach((brick, i)=>{
             fMakeBrickByCenter(brick, i);
