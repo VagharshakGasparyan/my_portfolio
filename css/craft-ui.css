@@ -2379,8 +2379,50 @@
         transform: scale(1, 1) rotate(0deg);
     }
 }
+.text-effect{
+    display: inline-block;
+}
+.text-effect:hover{
+    animation: text_effect 0.5s ease-in 1;
+}
+@keyframes text_effect {
+    0%{
+        transform: scale(3, 3);
+        opacity: 0;
+    }
 
+    100%{
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+.text-effect1, .text-effect1-inner{
+    display: inline-block;
+}
+.text-effect1:hover .text-effect1-inner{
+    animation: text_effect1 0.5s ease-in 1;
+}
+@keyframes text_effect1 {
+    0%{
+        transform: translate(0, -150px);
+        opacity: 0;
+    }
 
+    100%{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+.text-effect2{
+    display: inline-block;
+}
+.text-effect2:hover > span{
+    transform: rotate(360deg);
+}
+.text-effect2 > span{
+    display: inline-block;
+    transition: transform 500ms linear;
+}
 
 
 

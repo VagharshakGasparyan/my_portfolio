@@ -232,6 +232,49 @@ window.addEventListener('load', () => {
         vars.brick_cnv.height = vars.brick_cnv.getBoundingClientRect().height;
     });
 
+    //--------------------------------------breadcrumb------------------------------------------------------------------
+    let breadcrumb = document.getElementById('breadcrumb');
+    if(breadcrumb){
+        let text = breadcrumb.innerText;
+        // console.log(text);
+        let str = '';
+        for(let i = 0; i < text.length; i++) {
+            let letter = text[i];
+            if (letter === ' '){
+                letter = '&nbsp;';
+            }
+            str += '<div class="breadcrumb-letter">' + letter + '</div>';
+        }
+        breadcrumb.innerHTML = str;
+        let breadcrumb_letters = breadcrumb.querySelectorAll('.breadcrumb-letter');
+        let blocked = false;
+        breadcrumb.addEventListener('mouseover', (e) => {
+            // console.log('mouse over');
+            if(blocked){
+                return;
+            }
+            blocked = true;
+            breadcrumb_letters.forEach((item, index) => {
+                let t1 = index * 100;
+                let t2 = t1 + 500;
+                setTimeout(()=>{
+                    item.style.transform = 'translateY(-15px)';
+                }, t1);
+                setTimeout(()=>{
+                    item.style.transform = 'translateY(0)';
+                    if(index >= breadcrumb_letters.length - 1){
+                        setTimeout(()=>{
+                            blocked = false;
+                        }, 500);
+                    }
+                }, t2);
+            });
+        });
+        breadcrumb.addEventListener('mouseleave', (e) => {
+            // console.log('mouse leave');
+        });
+    }
+
 });
 
 //temp();

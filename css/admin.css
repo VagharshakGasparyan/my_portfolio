@@ -774,6 +774,9 @@ footer {
 }
 .mw0{
     width: 0;
-    /*max-width: 0 !important;*/
     white-space: nowrap;
+}
+.breadcrumb-letter{
+    display: inline-block;
+    transition: transform 500ms ease-in-out;
 }

@@ -65,7 +65,11 @@
 
 <main>
     <img id="zk" src="assets/images/zk.svg" alt="cogwheel">
-    <div style="font-size: 27px;text-align: center;margin-top: 70px;z-index: 5"><span id="shadow_text">Dashboard</span>
+    <div style="font-size: 27px;text-align: center;margin-top: 70px;z-index: 5">
+        <span id="shadow_text">Dashboard</span>
+    </div>
+    <div class="d-flex" style="justify-content: flex-end;">
+        <div id="breadcrumb">Home / Dashboard</div>
     </div>
     <img id="zu" src="assets/images/zu.svg" alt="straight_gear">
     <canvas id="brick_cnv"></canvas>
@@ -73,7 +77,7 @@
     <div class="ml100 mt100 row">
         <div style="padding: 10px;" class="col-0-24 col-1024-12">
             <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;">
-                <h2 class="text-center">Sales for the last month</h2>
+                <h2 class="text-center"><span class="text-effect" style="color: var(--c1)">Sales for the last month</span></h2>
                 <table class="table">
                     <thead>
                     <tr>
@@ -103,7 +107,7 @@
         </div>
         <div style="padding: 10px;" class="col-0-24 col-1024-12">
             <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;">
-                <h2 class="text-center">Sales for the last year</h2>
+                <h2 class="text-center"><span class="text-effect1" style="color: var(--c1)"><span class="text-effect1-inner">Sales for the last year</span></span></h2>
                 <table class="table">
                     <thead>
                     <tr>
@@ -133,30 +137,32 @@
         </div>
         <div style="padding: 10px;" class="col-0-24">
             <div style="border-radius: 10px; background-color: var(--bg-dark);padding: 10px;">
-                <h2 class="text-center">Products</h2>
+                <h2 class="text-center">
+                    <span class="text-effect2" style="color: var(--c1)">
+                        <span>P</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>s</span>
+                    </span>
+                </h2>
                 <table class="table">
                     <thead>
                     <tr>
                         <th class="mw0">ID</th>
                         <th>Name</th>
-                        <th>Price</th>
+                        <th>$ Price</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     <script>
-                        [{n: "Citadel", s: "12578"}, {n: "Blush Haven", s: "499530"}, {n: "Chic Verve", s: "124568"},
-                            {n: "Femme Loft", s: "225750"}, {n: "Urban Blossom", s: "378564"}, {n: "The Luxe Edit", s: "98450"},
-                            {n: "Bella Aura", s: "75000"}, {n: "Silk & Spice", s: "401250"}, {n: "Glow Theory", s: "257020"},
-                            {n: "Mode Muse", s: "308745"}, {n: "Zenith Finds", s: "45345"}, {n: "Wanderlust Bazaar", s: "784532"},
-                            {n: "The Curiosity Corner", s: "57954"}, {n: "Urban Oasis Goods", s: "72943"}, {n: "Whimsy & Wonder", s: "41865"},
-                            {n: "The Artisan Atelier", s: "49523"}, {n: "Daily Finds Co.", s: "741589"}, {n: "Cornerstone Goods", s: "100"},
-                            {n: "Vista Variety", s: "100000"}, {n: "Harmony Market", s: "150000"}, {n: "Prime Finds Hub", s: "200000"},
-                            {n: "Universal Goods", s: "250000"}, {n: "Horizon Finds", s: "300000"}, {n: "Simply Everything", s: "350145"}, {n: "Bright Picks", s: "400125"},
-                            {n: "Threads & Trends", s: "450745"}, {n: "Style Haven", s: "236557"}, {n: "Haute Threads", s: "124752"}, {n: "Antique Aura", s: "100500"},
-                        ].forEach((item, index) => {
+                        [{n: "Organic Honey", s: "125"}, {n: "Artisan Bread", s: "49"}, {n: "Gourmet Coffee", s: "12"},
+                        {n: "Olive Oil Premium", s: "75"}, {n: "Handmade Chocolate", s: "7"}, {n: "Fresh Pasta", s: "3"}, {n: "Craft Beer", s: "50"},
+                        {n: "Herbal Tea", s: "25"}, {n: "Farm Cheese", s: "4"}, {n: "SmartWatch Pro", s: "570"}, {n: "Wireless Earbuds", s: "35"},
+                        {n: "PowerBank Ultra", s: "20"}, {n: "Bluetooth Speaker", s: "17"}, {n: "Gaming Keyboard", s: "22"}, {n: "Scented Candles", s: "38"},
+                        {n: "Bamboo Cutlery", s: "65"}, {n: "Ceramic Planters", s: "105"}, {n: "Smart Light Bulb", s: "325"}, {n: "Wooden Coasters", s: "940"},
+                        {n: "Leather Wallet", s: "45"}, {n: "Canvas Backpack", s: "89"}, {n: "Silk Scarf", s: "92"}, {n: "Sports Sneakers", s: "107"},
+                        {n: "Silver Jewelry", s: "200"}, {n: "Natural Soap", s: "2"}, {n: "Face Serum", s: "8"}, {n: "Essential Oils", s: "12"},
+                        {n: "Bamboo Toothbrush", s: "3"}, {n: "Hair Care Kit", s: "114"}].forEach((item, index) => {
                             document.write('<tr><td class="mw0">' + (index + 1) + '</td>' +
-                                '<td>' + item.n + '</td><td>' + item.n + '</td>' +
+                                '<td>' + item.n + '</td><td>' + item.s + '</td>' +
                                 '<td class="mw0">' +
                                 '<button class="button"><i class="fa fa-eye mr5"></i>Show</button>' +
                                 '<button class="button"><i class="fa fa-edit mr5" style="color: var(--c1)"></i>Edit</button>' +
